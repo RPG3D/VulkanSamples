@@ -280,7 +280,7 @@ void init_queue_family_index(struct sample_info &info) {
     vkGetPhysicalDeviceQueueFamilyProperties(info.gpus[0], &info.queue_family_count, info.queue_props.data());
     assert(info.queue_family_count >= 1);
 
-    bool found = false;
+    bool U_ASSERT_ONLY found = false;
     for (unsigned int i = 0; i < info.queue_family_count; i++) {
         if (info.queue_props[i].queueFlags & VK_QUEUE_GRAPHICS_BIT) {
             info.graphics_queue_family_index = i;

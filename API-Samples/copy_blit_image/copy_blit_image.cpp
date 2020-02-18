@@ -120,7 +120,7 @@ int sample_main(int argc, char *argv[]) {
     memAllocInfo.pNext = NULL;
 
     vkGetImageMemoryRequirements(info.device, bltSrcImage, &memReq);
-    bool pass = memory_type_from_properties(info, memReq.memoryTypeBits, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT,
+    bool U_ASSERT_ONLY pass = memory_type_from_properties(info, memReq.memoryTypeBits, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT,
                                             &memAllocInfo.memoryTypeIndex);
     assert(pass);
     memAllocInfo.allocationSize = memReq.size;
